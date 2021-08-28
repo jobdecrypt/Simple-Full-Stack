@@ -1,0 +1,12 @@
+
+#Front END
+react
+superagent
+
+#Server
+express
+nodejs
+
+#Backend
+redis
+docker
