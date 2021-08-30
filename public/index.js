@@ -61,11 +61,18 @@ function App() {
     footer: 0,
   });
 
+  React.useEffect(() => {
+    // read db data & updata UI
+    const response = read().then((res) => {
+      setData(res);
+    });
+  }, []);
+
   function handle(section) {
-    console.log("Pong", section);
-    const value = data[section.name] + section.value;
-    const object = { [section.name]: value };
-    setData({ ...data, ...object });
+    // updata db & local state
+    const response = update(section.name, section.value).then((res) => {
+      setData(res);
+    });
   }
 
   return (
